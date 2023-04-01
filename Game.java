@@ -8,14 +8,14 @@ public class Game{
         boolean continueGame = true;
         
 
-        System.out.println("Welcome to the NUMBER GUESSING GAME!\nYou have 3 chances to guess the number between 0 and 10. The sooner you guess the correct number, the more points you earn.");
+        System.out.println("Welcome to the NUMBER GUESSING GAME!\nYou have 3 chances to guess the number from 1 to 10. The sooner you guess the correct number, the more points you earn.");
 
         gameplay();
     }
 
     public static int randomNumber() {
         Random rand = new Random();
-        int randomNumber = rand.nextInt(11);
+        int randomNumber = rand.nextInt(10) + 1;
         return randomNumber;
     }
 
