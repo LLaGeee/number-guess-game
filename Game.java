@@ -62,10 +62,22 @@ public class Game{
             }
             else{
                 System.out.println("Not correct");
+                compareGuess(numGuess, numAnswer);
             }
         }
 
         System.out.println("Points: " + points);
+        
+    }
+
+    public static void compareGuess(int guess, int answer){
+
+        if(guess < answer){
+            System.out.println("Try a larger number");
+        }
+        else{
+            System.out.println("Try a smaller number");
+        }
         
     }
 }
