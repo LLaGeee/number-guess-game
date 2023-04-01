@@ -5,23 +5,23 @@ public class Game{
     private static int points = 0;
     public static void main(String[] args) {
         
-        String response = "y";
-        boolean continueGame = true;
+        String response;
+        boolean continueGame = false;
         
 
         System.out.println("Welcome to the NUMBER GUESSING GAME!\nYou have 3 chances to guess the number from 1 to 10. The sooner you guess the correct number, the more points you earn.");
 
-        while(continueGame == true){
+        do{
             gameplay();
-            System.out.print("To continue, press y. To exit, press n. -->> ");
-            response = input.nextLine();
-            if(response.equals("y")){
+            System.out.print("To continue, press y. To exit, press any other key. -->> ");
+            response = input.next();
+            if(response.equalsIgnoreCase("y")){
                 continueGame = true;
             }
-            else if(response.equals("n")){
+            else {
                 continueGame = false;
             }
-        }
+        }while(continueGame == true);
         
     }
 
