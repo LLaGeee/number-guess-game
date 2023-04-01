@@ -25,10 +25,15 @@ public class Game{
         
     }
 
-    public static int randomNumber() {
-        Random rand = new Random();
-        int randomNumber = rand.nextInt(10) + 1;
-        return randomNumber;
+    public static void compareGuess(int guess, int answer){
+
+        if(guess < answer){
+            System.out.println("Try a larger number");
+        }
+        else{
+            System.out.println("Try a smaller number");
+        }
+        
     }
 
     public static void gameplay() {
@@ -46,7 +51,12 @@ public class Game{
             else{
                 System.out.print("Third try: ");
             }
-            numGuess = input.nextInt();
+            
+            do{
+                numGuess = input.nextInt();
+            }while(numGuess < 1 || numGuess > 10);
+
+
             if(numGuess == numAnswer){
                 System.out.println("Correct");
                 if(attempt == 1){
@@ -70,14 +80,9 @@ public class Game{
         
     }
 
-    public static void compareGuess(int guess, int answer){
-
-        if(guess < answer){
-            System.out.println("Try a larger number");
-        }
-        else{
-            System.out.println("Try a smaller number");
-        }
-        
+    public static int randomNumber() {
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(10) + 1;
+        return randomNumber;
     }
 }
