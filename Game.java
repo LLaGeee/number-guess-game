@@ -28,10 +28,10 @@ public class Game{
     public static void compareGuess(int guess, int answer){
 
         if(guess < answer){
-            System.out.println("Try a larger number");
+            System.out.println("Try a larger number\n-----------");
         }
         else{
-            System.out.println("Try a smaller number");
+            System.out.println("Try a smaller number\n-----------");
         }
         
     }
@@ -43,7 +43,7 @@ public class Game{
 
         for(int attempt = 1; attempt <= 3; attempt++){
             if(attempt == 1){
-                System.out.print("First try: ");
+                System.out.print("-----------\nFirst try: ");
             }
             else if(attempt == 2){
                 System.out.print("Second try: ");
@@ -51,7 +51,7 @@ public class Game{
             else{
                 System.out.print("Third try: ");
             }
-            
+
             do{
                 numGuess = input.nextInt();
             }while(numGuess < 1 || numGuess > 10);
@@ -72,11 +72,14 @@ public class Game{
             }
             else{
                 System.out.println("Not correct");
-                compareGuess(numGuess, numAnswer);
+                if(attempt < 3){
+                    compareGuess(numGuess, numAnswer);
+                }
+                
             }
         }
 
-        System.out.println("Points: " + points);
+        System.out.println("Points: " + points + "\n-----------");
         
     }
 
