@@ -2,6 +2,7 @@ import java.util.*;
 public class Game{
 
     public static Scanner input = new Scanner(System.in);
+    private static int points = 0;
     public static void main(String[] args) {
         
         String response = "y";
@@ -10,7 +11,18 @@ public class Game{
 
         System.out.println("Welcome to the NUMBER GUESSING GAME!\nYou have 3 chances to guess the number from 1 to 10. The sooner you guess the correct number, the more points you earn.");
 
-        gameplay();
+        while(continueGame == true){
+            gameplay();
+            System.out.print("To continue, press y. To exit, press n. -->> ");
+            response = input.nextLine();
+            if(response.equals("y")){
+                continueGame = true;
+            }
+            else if(response.equals("n")){
+                continueGame = false;
+            }
+        }
+        
     }
 
     public static int randomNumber() {
@@ -20,7 +32,7 @@ public class Game{
     }
 
     public static void gameplay() {
-        int numGuess, numAnswer, points = 0;
+        int numGuess, numAnswer;
 
         numAnswer = randomNumber();
 
@@ -46,7 +58,7 @@ public class Game{
                 else{
                     points += 1;
                 }
-                return;
+                break;
             }
             else{
                 System.out.println("Not correct");
